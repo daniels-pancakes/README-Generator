@@ -1,10 +1,10 @@
-// TODO: Include packages needed for this application
+// Include packages needed for this application
 const { exec } = require('child_process');
 const fs = require('fs');
 const inquirer = require('inquirer');
 
 
-// TODO: Create an array of questions for user input
+// Create an array of questions for user input
 const questions = [{
     type: 'input',
     name: 'title',
@@ -59,7 +59,7 @@ const questions = [{
     validate: (input) => input.length > 0 || 'Please enter some text.'
 }];
 
-// TODO: Create a function to write README file
+// Create a function to write README file
 function writeToFile(filename, data) {
     fs.writeFile('README.MD', data, (err) => err ? console.log(err) : console.log('Success!'));
 }
@@ -83,9 +83,11 @@ function getLicenseBadge(license) {
         case 'Eclipse':
             return '[![License](https://img.shields.io/badge/License-EPL%201.0-blue.svg)](https://opensource.org/licenses/EPL-1.0)';
         case 'GNU Affero':
-            return '[![License: GNU Affero General Public License v3.0](https://img.shields.io/badge/License-GPL_3-blue.svg?style=for-the-badge)](https://www.gnu.org/licenses/gpl-3.0.txt)';
-        case 'GNU v2.0':;
-        case 'GNU Lesser':;
+            return '[![License: GNU Affero General Public License v3.0](https://img.shields.io/badge/License-AGPL_3-blue.svg?style=for-the-badge)](https://www.gnu.org/licenses/agpl-3.0.txt)';
+        case 'GNU v2.0':            
+            return '[![License: GNU General Public License v2.0](https://img.shields.io/badge/License-GPL_2-blue.svg?style=for-the-badge)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.txt)';
+        case 'GNU Lesser':
+            return '[![License: GNU Lesser General Public License v3.0](https://img.shields.io/badge/License-LGPL_3-blue.svg?style=for-the-badge)](https://www.gnu.org/licenses/lgpl-3.0.txt)';
         case 'Mozilla':
             return '[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-FF7139.svg?style=for-the-badge)](https://opensource.org/licenses/MPL-2.0)';
         case 'Unlicense':
@@ -93,14 +95,14 @@ function getLicenseBadge(license) {
     }
 }
 
-// TODO: Create a function to initialize app
+// Create a function to initialize app
 function init() {
 
 inquirer.prompt(questions)
     .then((response) => {
         console.clear();
         const readmeOutput = 
-        `# ${response.title}
+`# ${response.title}\n
 ${getLicenseBadge(response.lic)}
 
 ## Description
@@ -126,7 +128,8 @@ ${response.cont}
 ${response.test}
 
 ## Questions
-https://github.com/${response.ghusername}`;
+https://github.com/${response.ghusername}\n
+${response.email}`;
 console.log(`Written to file: 'README.MD'\n${readmeOutput}`);
     writeToFile('README.md', readmeOutput);
     exec('code -r ./README.md');

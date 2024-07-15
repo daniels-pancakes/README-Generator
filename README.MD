@@ -1,8 +1,9 @@
-# P
+# README Generator
+
 [![License: Unlicense](https://img.shields.io/badge/License-Unlicense-blue.svg)](http://unlicense.org/)
 
 ## Description
-P
+With this JavaScript you can create a simple README file to deploy along with your projects and applications. When the index.js is ran with node in command line, the script will prompt the user to enter information about their project. This information will then be used to populate a README file.
 
 ## Table of Contents
 * [Installation Instructions](#installation-instructions)
@@ -12,16 +13,23 @@ P
 * [Questions](#questions)
 
 ## Installation Instructions
-P
+Ensure that node is installed. The corresponding packages and dependencies. are present in the development folder of this project. 
 
 ## Usage Information
-P
+To use, simply navigate to directory where you have installed the files in command line and run 'node index.js' from command line. The script will prompt the user through the process.
+
+### Preview
+
+![Image preview of the script prompts.](./assets/media/previewa.png)
+![Video walkthrough of the script in use.](./assets/media/README_Gen_Walkthru.gif)
 
 ## Contribution Guidelines
-P
+There are no plans to open this project to outside contributors at this time.
 
 ## Test Instructions
-P
+No tests implemented at this time.
 
 ## Questions
-https://github.com/P
+Please reach out to me for additional inquiries:
+https://github.com/daniels-pancakes
+ddunnemann@gmail.com
