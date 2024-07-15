@@ -95,6 +95,37 @@ function getLicenseBadge(license) {
     }
 }
 
+function getLicenseLink(license) {
+    switch (license) {
+        case 'Apache':
+            return '[The License Webpage](https://opensource.org/licenses/Apache-2.0)';
+        case 'GNU v3.0':
+            return '[The License Webpage](https://www.gnu.org/licenses/gpl-3.0)';
+        case 'MIT':
+            return '[The License Webpage](https://opensource.org/licenses/MIT)';
+        case 'BSD 2':
+            return '[The License Webpage](https://opensource.org/licenses/BSD-2-Clause)';
+        case 'BSD 3':
+            return '[The License Webpage](https://opensource.org/licenses/BSD-3-Clause)';
+        case 'Boost':
+            return '[The License Webpage](https://www.boost.org/LICENSE_1_0.txt)';
+        case 'Creative Commons':
+            return '[The License Webpage](https://creativecommons.org/publicdomain/zero/1.0/)';
+        case 'Eclipse':
+            return '[The License Webpage](https://opensource.org/licenses/EPL-1.0)';
+        case 'GNU Affero':
+            return '[The License Webpage](https://www.gnu.org/licenses/agpl-3.0.txt)';
+        case 'GNU v2.0':            
+            return '[The License Webpage](https://www.gnu.org/licenses/old-licenses/gpl-2.0.txt)';
+        case 'GNU Lesser':
+            return '[The License Webpage](https://www.gnu.org/licenses/lgpl-3.0.txt)';
+        case 'Mozilla':
+            return '[The License Webpage](https://opensource.org/licenses/MPL-2.0)';
+        case 'Unlicense':
+            return '[The License Webpage](http://unlicense.org/)';
+    }
+}
+
 // Create a function to initialize app
 function init() {
 
@@ -111,6 +142,7 @@ ${response.desc}
 ## Table of Contents
 * [Installation Instructions](#installation-instructions)
 * [Usage Information](#usage-information)
+* [License](#license)
 * [Contribution Guidelines](#contribution-guidelines)
 * [Test Instructions](#test-instructions)
 * [Questions](#questions)
@@ -120,6 +152,10 @@ ${response.install}
 
 ## Usage Information
 ${response.usage}
+
+## License
+This project is licensed under The ${response.lic} License. For more details visit ${getLicenseLink(response.lic)}
+ 
 
 ## Contribution Guidelines
 ${response.cont}

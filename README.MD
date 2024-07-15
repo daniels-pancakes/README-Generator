@@ -20,8 +20,8 @@ To use, simply navigate to directory where you have installed the files in comma
 
 ### Preview
 
-![Image preview of the script prompts.](./assets/media/previewa.png)
-![Video walkthrough of the script in use.](./assets/media/README_Gen_Walkthru.gif)
+![Image preview of the script prompts.](./assets/media/preview.png)
+![Video walkthrough of the script in use.](./assets/media/readme_gen_walkthru.gif)
 
 ## Contribution Guidelines
 There are no plans to open this project to outside contributors at this time.
